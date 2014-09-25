@@ -56,13 +56,13 @@
             </div>
 
             <div class="tile image selected">
-                <a href="Users.aspx" title="Manage Users">
+                <a href="PlantHireMachine.aspx" title="Manage Users">
                     <div class="tile-body">
                         <img alt="" src="/Images/image2.jpg">
                     </div>
                     <div class="tile-object">
                         <div class="name">
-                            Manage Users
+                            Manage Plant Hire Machine
                         </div>
                     </div>
                 </a>

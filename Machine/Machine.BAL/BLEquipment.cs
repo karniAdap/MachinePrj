@@ -4,7 +4,7 @@ namespace Machine.BAL
 {
     public class BLEquipment
     {
-        public static List<DAL.Equipment> GetList(string con, string EqType, string str)
+        public static List<DAL.Equipment> GetList(string con, string EqType, string str=null)
         {
             return Machine.DAL.Equipments.GetList(con, EqType, str);
         }

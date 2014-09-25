@@ -12,8 +12,7 @@ Create Table Users
 	IsAdmin			Bit Default 0,
 	CreateDate		Date
 )
-Go
- 
+Go 
 
 insert into Users(UserName,Pass,FirstName, LastName, Email, IsAdmin, CreateDate) values('admin','admin123', 'Billy', ' ','admin@gmail.com',1, GETDATE() ) 
 
@@ -85,43 +84,41 @@ Create Table Settings
 Go
 
 
-If(OBJECT_ID('PlanHireMachine','U') Is not Null)
-	Drop Table PlanHireMachine
+If(OBJECT_ID('PlantHireMachines','U') Is not Null)
+	Drop Table PlantHireMachines
 Go
  
-Create Table PlanHireMachine
+Create Table PlantHireMachines
 (
-	Id				int Identity(1,1) Primary key,
-	HireDate		Date,
-	DocketNo		int,
-	StartHour		Decimal(6,2),
-	FinishHour		Decimal(6,2),
-	Hours			Decimal(6,2),
-	Plant			int,
-	Wet				Decimal(6,2),
-	Nett			Decimal(6,2)
+	PlantHireMachineId		int Identity(1,1) Primary key,
+	HireDate				Datetime,
+	DocketNo				int,
+	StartHour				Decimal(6,2),
+	FinishHour				Decimal(6,2),
+	Hours					Decimal(6,2),
+	Plant					int,
+	Wet						Decimal(6,2),
+	Nett					Decimal(6,2),
+	CreateDate				DateTime
 )
 Go
 
-If(OBJECT_ID('PlanHireLabour','U') Is not Null)
-	Drop Table PlanHireLabour
+If(OBJECT_ID('PlantHireLabours','U') Is not Null)
+	Drop Table PlantHireLabours
 Go
  
-Create Table PlanHireLabour
+Create Table PlantHireLabours
 (
-	Id				int Identity(1,1) Primary key,
-	HireDate		Date,
-	Name			Varchar(100),
-	Description		Varchar(500),
-	StartHour		Decimal(6,2),
-	FinishHour		Decimal(6,2),
-	Plant			int,
-	Total			Decimal(6,2)
+	PlantHireLabourId		int Identity(1,1) Primary key,
+	HireDate				Datetime,
+	Name					Varchar(100),
+	Description				Varchar(500),
+	StartHour				Decimal(6,2),
+	FinishHour				Decimal(6,2), 
+	Total					Decimal(6,2),
+	CreateDate				DateTime
 )
 Go
-
-
-
-
+  
 --Select 'If(OBJECT_ID('''+Name +''',''U'') Is not Null) Drop Table '+ name from sys.Tables
 

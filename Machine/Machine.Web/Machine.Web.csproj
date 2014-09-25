@@ -137,7 +137,7 @@
   <ItemGroup>
     <Content Include="Admin\AdminChangePassword.aspx" />
     <Content Include="Admin\AdminLogin.aspx" />
-    <Content Include="Admin\PlantHirMachine.aspx" />
+    <Content Include="Admin\PlantHireMachine.aspx" />
     <Content Include="Admin\Equipment.aspx" />
     <Content Include="Admin\Default.aspx" />
     <Content Include="Admin\ForgotPassword.aspx" />
@@ -326,12 +326,12 @@
     <Compile Include="Admin\AdminLogin.aspx.designer.cs">
       <DependentUpon>AdminLogin.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin\PlantHirMachine.aspx.cs">
-      <DependentUpon>PlantHirMachine.aspx</DependentUpon>
+    <Compile Include="Admin\PlantHireMachine.aspx.cs">
+      <DependentUpon>PlantHireMachine.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\PlantHirMachine.aspx.designer.cs">
-      <DependentUpon>PlantHirMachine.aspx</DependentUpon>
+    <Compile Include="Admin\PlantHireMachine.aspx.designer.cs">
+      <DependentUpon>PlantHireMachine.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\Equipment.aspx.cs">
       <DependentUpon>Equipment.aspx</DependentUpon>

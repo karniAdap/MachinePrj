@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/Admin.Master" AutoEventWireup="true" CodeBehind="PlantHirMachine.aspx.cs" Inherits="Machine.Web.Admin.PlantHirMachine" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/Admin.Master" AutoEventWireup="true" CodeBehind="PlantHireMachine.aspx.cs" Inherits="Machine.Web.Admin.PlantHireMachine" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     Plant Hire Machine : Admin
@@ -35,7 +35,7 @@
                         <div class="portlet-body">
                             <div class="dataTables_wrapper no-footer">
                                 <div class="row">
-                                    <div class="col-md-6 col-sm-12">
+                                    <div class="col-md-6 col-sm-12" style="display:none;">
                                         <div id="Div3" class="dataTables_filter">
                                             Search:<asp:TextBox ID="tbSearch" CssClass="form-control input-small input-inline" runat="server"></asp:TextBox>
                                             <asp:Button ID="btnFilter" runat="server" CssClass="search_button" Text="Search" OnClick="btnFilter_Click" />
@@ -58,7 +58,7 @@
                                             <asp:BoundField DataField="StartHour" HeaderText="StartHour" />
                                             <asp:BoundField DataField="FinishHour" HeaderText="FinishHour" />
                                             <asp:BoundField DataField="Hours" HeaderText="Hours" />
-                                            <asp:BoundField DataField="Plant" HeaderText="Plant" />
+                                            <asp:BoundField DataField="PlantName" HeaderText="Plant" />
                                             <asp:BoundField DataField="Wet" HeaderText="Wet" />
                                             <asp:BoundField DataField="Nett" HeaderText="Nett" />
                                             <asp:TemplateField ShowHeader="False">
@@ -89,20 +89,70 @@
                 <div class="portlet-body form">
                     <div class="form-body">
                         <div class="form-group">
-                            <label class="col-md-3 control-label">MachineName</label>
+                            <label class="col-md-3 control-label">HireDate</label>
                             <div class="col-md-4">
-                                <asp:TextBox ID="tbName" MaxLength="30" runat="server" class="form-control"></asp:TextBox>
-                                <asp:RequiredFieldValidator ID="rfvName" SetFocusOnError="true" runat="server" CssClass="erralign"
-                                    ErrorMessage="*Machine Name Required" ControlToValidate="tbName" ForeColor="Red"></asp:RequiredFieldValidator>
+                                <asp:TextBox ID="tbHireDate" MaxLength="30" runat="server" class="form-control"></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="rfvName" Display="Dynamic" SetFocusOnError="true" runat="server" CssClass="erralign"
+                                    ErrorMessage="*Hire Date Required" ControlToValidate="tbHireDate" ForeColor="Red"></asp:RequiredFieldValidator>
+                                <asp:CompareValidator ID="cvHireDate" SetFocusOnError="False" runat="server" CssClass="erralign"
+                                    ErrorMessage="*Invalide Date" Display="Dynamic" ControlToValidate="tbHireDate" ForeColor="Red" Type="Date" Operator="DataTypeCheck"></asp:CompareValidator>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-md-3 control-label">Value</label>
+                            <label class="col-md-3 control-label">DocketNo</label>
                             <div class="col-md-4">
                                 <div class="input-icon">
-                                    <asp:TextBox ID="tbValue" MaxLength="50" runat="server" class="form-control"></asp:TextBox>
+                                    <asp:TextBox ID="tbDocketNo" MaxLength="50" runat="server" class="form-control"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator3" SetFocusOnError="true" runat="server" CssClass="erralign"
-                                        ErrorMessage="*Value Required" ControlToValidate="tbValue" ForeColor="Red"></asp:RequiredFieldValidator>
+                                        ErrorMessage="*DocketNo Required" ControlToValidate="tbDocketNo" ForeColor="Red"></asp:RequiredFieldValidator>
+                                    <asp:CompareValidator ID="cvDocketNo" SetFocusOnError="False" runat="server" CssClass="erralign"
+                                    ErrorMessage="*Invalide Date" Display="Dynamic" ControlToValidate="tbHireDate" ForeColor="Red" Type="Date" Operator="DataTypeCheck"></asp:CompareValidator>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">StartHour</label>
+                            <div class="col-md-4">
+                                <div class="input-icon">
+                                    <asp:TextBox ID="tbStartHour" MaxLength="50" runat="server" class="form-control"></asp:TextBox>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" SetFocusOnError="true" runat="server" CssClass="erralign"
+                                        ErrorMessage="*Start Hour Required" ControlToValidate="tbStartHour" ForeColor="Red"></asp:RequiredFieldValidator>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">FinishHour</label>
+                            <div class="col-md-4">
+                                <div class="input-icon">
+                                    <asp:TextBox ID="tbFinishHour" MaxLength="50" runat="server" class="form-control"></asp:TextBox>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" SetFocusOnError="true" runat="server" CssClass="erralign"
+                                        ErrorMessage="*FinishHour Required" ControlToValidate="tbFinishHour" ForeColor="Red"></asp:RequiredFieldValidator>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Plant</label>
+                            <div class="col-md-4">
+                                <div class="input-icon">
+                                    <asp:DropDownList ID="ddlPlant" runat="server"></asp:DropDownList>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Wet</label>
+                            <div class="col-md-4">
+                                <div class="input-icon">
+                                    <asp:TextBox ID="tbWet" MaxLength="50" runat="server" class="form-control"></asp:TextBox>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Nett</label>
+                            <div class="col-md-4">
+                                <div class="input-icon">
+                                    <asp:TextBox ID="tbNett" MaxLength="50" runat="server" class="form-control"></asp:TextBox>
+
                                 </div>
                             </div>
                         </div>
@@ -116,6 +166,5 @@
                 </div>
             </div>
         </asp:View>
-
     </asp:MultiView>
 </asp:Content>

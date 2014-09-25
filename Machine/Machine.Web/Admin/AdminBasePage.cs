@@ -34,6 +34,7 @@ namespace Machine.Web.Admin
                 lstPages.Add("Equipment.aspx");
                 lstPages.Add("Users.aspx");
                 lstPages.Add("Settings.aspx");
+                lstPages.Add("PlantHireMachine.aspx");
 
 
                 //StringBuilder sb = new StringBuilder();
