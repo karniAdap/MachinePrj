@@ -1,0 +1,4 @@
+D:\MachinePrj\Machine\Machine.DAL\bin\Debug\Machine.DAL.dll
+D:\MachinePrj\Machine\Machine.DAL\bin\Debug\Machine.DAL.pdb
+D:\MachinePrj\Machine\Machine.DAL\obj\Debug\Machine.DAL.dll
+D:\MachinePrj\Machine\Machine.DAL\obj\Debug\Machine.DAL.pdb

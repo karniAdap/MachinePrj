@@ -1,0 +1,7 @@
+D:\MachinePrj\Machine\Machine.BAL\bin\Debug\Machine.BAL.dll
+D:\MachinePrj\Machine\Machine.BAL\bin\Debug\Machine.BAL.pdb
+D:\MachinePrj\Machine\Machine.BAL\bin\Debug\Machine.DAL.dll
+D:\MachinePrj\Machine\Machine.BAL\bin\Debug\Machine.DAL.pdb
+D:\MachinePrj\Machine\Machine.BAL\obj\Debug\Machine.BAL.csprojResolveAssemblyReference.cache
+D:\MachinePrj\Machine\Machine.BAL\obj\Debug\Machine.BAL.dll
+D:\MachinePrj\Machine\Machine.BAL\obj\Debug\Machine.BAL.pdb

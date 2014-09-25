@@ -1,0 +1,31 @@
+The cost codes are as follow;
+
+312 – Stripping/carting topsoil
+315 – Blasting crew only
+316 – Overburden & Partings
+317 – Coal Cleanoff
+318 - Partings
+323 - Coal Extraction
+324 – Coal Raking
+331 - Reshape Dumps
+332 – Spread Topsoil
+336 – Environmental Works
+377 – MineSupport Services
+520 – Crusher Operations
+521 – Tramming Rom Pad
+560 – Load RoadTrain/Coal Pushup
+561 – Tramming Crusher Pad
+RM – Maintenance
+
+Delays are as follows;
+
+Blast Running
+Blast Idle
+Hot Seating
+Fuel/Servicing
+Maintenance Running
+Maintenance Idle
+Weather
+Safety
+Standby
+Other

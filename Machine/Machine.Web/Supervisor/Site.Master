@@ -1,0 +1,70 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Machine.Web.Supervisor.Site" %>
+
+<%@ Register Src="~/common/logo.ascx" TagPrefix="uc1" TagName="logo" %>
+<%@ Register Src="~/common/UserProfile.ascx" TagPrefix="uc1" TagName="UserProfile" %>
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+<head runat="server">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <title>
+        <asp:ContentPlaceHolder ID="head" runat="server">
+        </asp:ContentPlaceHolder>
+    </title>
+    <link href="/colorbox.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/Content/style.css" type="text/css" media="screen" />
+    <script type="text/javascript" src="/Scripts/jquery-1.7.1.js"></script> 
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div id="cboxOverlay" style="opacity: 0.9; cursor: pointer; display: none;"></div>
+        <div id="header-wrap">
+            <div class="header">
+                <div>
+                    <uc1:logo runat="server" ID="logo" />
+                </div>
+                <div class="cssmenu">
+                    <ul>
+                        <li><a href="/Supervisor//Default.aspx">Home </a></li>
+                        <li><a href="/Supervisor/MyProfile.aspx" title="">My Profile</a></li>
+                        <li><a href="/Supervisor/ReportList.aspx" title="">Saved Reports</a></li>
+                        <li><a href="/Supervisor/ChangePassword.aspx" title="">Change Password</a></li>
+                        <li>
+                            <asp:LinkButton ID="btnLogout" runat="server" Text="Logout" OnClick="btnLogout_Click"></asp:LinkButton>
+                        </li>
+                    </ul>
+                </div>
+                <div class="clear_fix loginNav" id="divMenu" runat="server">
+                    <ul>
+                        <asp:Literal ID="ltMenu" runat="server"></asp:Literal>
+                        <li class="usertext">
+                            <uc1:UserProfile runat="server" ID="UserProfile" />
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="content-wrap">
+            <div class="clearfix section">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+        </div>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                var url = window.location.href.toLowerCase();
+                $(".cssmenu > ul").find("li").each(function () {
+                    if ($(this).has(">a")) {
+                        var str2 = $(this).children("a").attr("href").toLowerCase();
+                        if (url.indexOf(str2) != -1) {
+                            $(this).children("a").addClass("menuactive");
+                            $(this).parent("ul").parent("li").children("a").addClass("menuactive");
+                        }
+                    }
+                });
+            });
+        </script>
+    </form>
+</body>
+</html>
